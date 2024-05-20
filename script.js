@@ -134,11 +134,17 @@ window.onload = function() {
 
     pauseMenu.style.display = "block";
     requestAnimationFrame = (a) => setTimeout(a, 1e3/60);
-    requestAnimationFrame(update);
+    //requestAnimationFrame(update);
+    setTimeout(function() {
+        update();
+    }, 16.66667);
 }
 
 function update() {
-    requestAnimationFrame(update);
+    //requestAnimationFrame(update);
+    setTimeout(function() {
+        update();
+    }, 16.66667);
     if (paused){
         return;
     }
