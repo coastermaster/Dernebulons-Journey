@@ -25,6 +25,8 @@ let board;
 let boardWidth = 360;
 let boardHeight = 640;
 let activeScoreDisplay;
+let left;
+let right;
 
 //player
 let playerWidth = 34; //width/height ratio = 408/228 = 17/12
@@ -435,6 +437,26 @@ document.addEventListener("keydown", function(event) {
         playerNameList = ["Ryan"]
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    left = document.getElementById("left");
+    right = document.getElementById("right");
+    left.addEventListener("touchstart", function() {
+        move(-5);
+    });
+
+    left.addEventListener("touchend", function() {
+        move(0);
+    });
+
+    right.addEventListener("touchstart", function() {
+        move(5);
+    });
+
+    right.addEventListener("touchend", function() {
+        move(0);
+    });
+});
+
 function detectCollision(a, b) {
     //check if all of a sides are within b sides
     return a.x + a.width > b.x && // Right side of a is to the right of the left side of b
