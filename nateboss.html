@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" , content="width=device-width, initial-scale=1.0">
+    <title>Dernebulon's Journey</title>
+    <link rel="stylesheet" href="nateboss.css">
+    <script src="nateboss.js"></script>
+</head>
+
+<body>
+    <div id="display">
+        <canvas id="board"></canvas>
+        <div id="valueDisplay">
+            <div id="dashOuter"></div>
+            <div id="dash"></div>
+            <div id="healthOuter"></div>
+            <div id=health></div>
+        </div>
+        <div id="leftButton"></div>
+        <div id="rightButton"></div>
+        <div id="dashButton"></div>
+        <div id="jumpButton"></div>
+        <div id="bossBar">
+            <div id="bossBarInner">
+        </div>
+    </div>
+    <div id="confirmMenu" style="display: block;">
+        <p id="largeText">Boss fight!</p>
+        <p>You have gotten to the boss Nate Schaub</p>
+        <p>If you want to beat the game, you must defeat Nathan Schaub</p>
+        <p>If you got here illegitimately you are a cheater and have to go back and get 7000 score.</p> 
+        <p> Alternatively you can cheat in the check thing too I don't care.</p>
+        <button id="bossButton" onmousedown="verify();">Start fight!</button>
+        <button id="restart" onmousedown="quit();">Go back</button>
+        <br></br>
+    </div>
+    <div id="gameOverDisplay" style="display: none;">
+        <p id="largeText">You Suck!</p>
+        <p>You have gotten defeated by the boss Nate Schaub</p>
+        <p>If you want to beat the game, you must climb back up</p>
+        <button id="bossButton" onmousedown="begone();">Begone</button>
+        <button id="bossButton" onmousedown="restart();">Cheat</button>
+        <br></br>
+    </div>
+    <script>
+
+    </script>
+</body>
+
+</html>

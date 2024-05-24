@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+body {
+    font-family: 'Oxygen Mono', monospace;
+    text-align: center;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+
+#display{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+#board {
+    /* background-color: skyblue; */
+    background-image: url("./Desert.jpg");
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#confirmMenu {
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    background-color: gray;
+    border-radius: 25px;
+    line-height: 1; 
+}
+
+#restart {
+    position: relative;
+    z-index: 999999999;
+    width: 200px;
+    height: 25px;
+    border-radius: 25px;
+}
+
+#bossButton {
+    position: relative;
+    z-index: 999999999;
+    width: 80px;
+    height: 25px;
+    border-radius: 25px;
+}
+
+#dashOuter{
+    z-index: 2;
+    position: absolute;
+    transform: translate(0%, -50%);
+    background-color: grey;
+    border-radius: 15px;
+    right: 0%;
+    bottom: -50%;
+    width: 100%;
+    height: 30%;
+}
+
+#dash{
+    z-index: 3;
+    position: absolute;
+    transform: translate(0%, -50%);
+    background-color: lightgray;
+    border-radius: 15px;
+    left: 1%;
+    bottom: -35%;
+    width: 98%;
+    height: 15%;
+}
+
+#valueDisplay{
+    z-index: 2;
+    position: absolute;
+    transform: translate(0%, 0%);
+    right: 0%;
+    top: 0%;
+    width: 33%;
+    height: 5%;
+}
+
+#healthOuter{
+    z-index: 2;
+    position: absolute;
+    transform: translate(0%, 0%);
+    background-color: red;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+#health{
+    z-index: 3;
+    position: absolute;
+    transform: translate(0%, 0%);
+    background-color: darkred;
+    left: 1%;
+    top: 10%;
+    width: 98%;
+    height: 80%;
+}
+
+#gameOverDisplay{
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    background-color: gray;
+    border-radius: 25px;
+    line-height: 1; 
+}
+
+#leftButton{
+    position: absolute;
+    z-index: 5;
+    left: 5%;
+    bottom: 5%;
+    width: 9%;
+    height: 16%;
+    background-color: transparent;
+    border-radius: 25%;
+    border-style: solid;
+    border-color: black;
+    border-width: calc(.5vw);
+}
+#rightButton{
+    position: absolute;
+    z-index: 5;
+    left: 19%;
+    bottom: 5%;
+    width: 9%;
+    height: 16%;
+    background-color: transparent;
+    border-radius: 25%;
+    border-style: solid;
+    border-color: black;
+    border-width: calc(.5vw);
+}
+#jumpButton{
+    position: absolute;
+    z-index: 5;
+    right: 5%;
+    bottom: 5%;
+    width: 9%;
+    height: 16%;
+    background-color: transparent;
+    border-radius: 25%;
+    border-style: solid;
+    border-color: black;
+    border-width: calc(.5vw);
+}
+#dashButton{
+    position: absolute;
+    z-index: 5;
+    right: 19%;
+    bottom: 5%;
+    width: 9%;
+    height: 16%;
+    background-color: transparent;
+    border-radius: 25%;
+    border-style: solid;
+    border-color: black;
+    border-width: calc(.5vw);
+}
