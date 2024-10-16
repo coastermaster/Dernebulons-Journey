@@ -43,6 +43,19 @@ body {
     line-height: 1; 
 }
 
+#win {
+    display: block;
+    z-index: 9999;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    background-color: gray;
+    border-radius: 25px;
+    line-height: 1; 
+}
+
 #restart {
     position: relative;
     z-index: 999999999;
@@ -179,4 +192,28 @@ body {
     border-style: solid;
     border-color: black;
     border-width: calc(.5vw);
+}
+
+#bossBar{
+    z-index: 2;
+    position: absolute;
+    transform: translate(-50%, 0%);
+    background-color: red;
+    border-radius: 15px;
+    opacity: 30%;
+    width: 40%;
+    height: 10%;
+    bottom: 0%;
+    left: 50%;
+}
+#bossBarInner {
+    z-index: 3;
+    position: absolute;
+    transform: translate(0%, 0%);
+    background-color: darkred;
+    border-radius: 15px;
+    top: 5%;
+    left: 1%;
+    width: 98%;
+    height: 90%;
 }
