@@ -1,3 +1,4 @@
+let updateRate = 100/6
 //coins
 let coins = 0;
 let coinNeedsSpawned = true;
@@ -213,7 +214,7 @@ function update() {
     //requestAnimationFrame(update);
     setTimeout(function() {
         update();
-    }, 16.66667);
+    }, updateRate);
     if (paused){
         return;
     }
@@ -536,7 +537,6 @@ document.addEventListener("keydown", function(event) {
     }
     if (event.code === "Backquote"){
         playerNameList = ["JFK"]
-
     }
 });
 
