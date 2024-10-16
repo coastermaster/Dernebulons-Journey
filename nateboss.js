@@ -33,6 +33,7 @@ let nate = {
     width: 10,
     height: 10
 };
+let nateHealthDisplay;
 let legit;
 let moveDirection;
 let nateSpeed;
@@ -47,6 +48,7 @@ let nateHealth = {
 };
 let gameIsOver = false;
 let gameOverDisplay;
+let win;
 let attackType
 let ssHealing = 100;
 let ssCooldown = 50000;
@@ -197,6 +199,7 @@ function quit(){
 window.onload = function() {
     board = document.getElementById("board");
     gameOverDisplay = document.getElementById("gameOverDisplay");
+    win = document.getElementById("win");
     healthDisplay = document.getElementById("health");
     dashInnerDisplay = document.getElementById("dash");
     dashOuterDisplay = document.getElementById("dashOuter");
@@ -204,6 +207,7 @@ window.onload = function() {
     rightButton = document.getElementById("rightButton");
     dashButton = document.getElementById("dashButton");
     jumpButton = document.getElementById("jumpButton");
+    nateHealthDisplay = document.getElementById("bossBarInner");
     context = board.getContext("2d");
 
     // Load player image
@@ -251,7 +255,8 @@ function update() {
         return;
     }
     if (nateHealth.totalHP <= 0){
-        console.log("you win!!!!")
+        win.style.display = "block";
+        gameIsOver = true;
     }
     if (isMobile()){
         mouseX = nate.x + (nate.width / 2);
@@ -368,8 +373,8 @@ document.addEventListener('DOMContentLoaded', () => {
         display.height = elementHeight; // Set canvas height
         maxHeight = elementHeight;
         maxWidth = elementWidth;
-        nate.width = board.height / 10;
-        nate.height = board.height / 10;
+        nate.width = board.height / 5;
+        nate.height = board.height / 5;
         nate.y = elementHeight / 4;
         player.width = board.height / 10;
         player.height = board.height / 10;
@@ -492,6 +497,7 @@ function gameOver(){
     gameOverDisplay.style.display = "block";
     gameIsOver = true;
     health = 300;
+    nateHealth.totalHP = 3750;
     nate.x = (board.width - nate.width) / 2;
     nate.y = (board.height - nate.height) / 16;
     player.x = (board.width / 2) - player.width;
@@ -661,6 +667,7 @@ function updateBullets() {
             if (detectCollision(bullet, nate)) {
                 bullet.active = false;
                 nateHealth.totalHP -= weapon.damage;
+                nateHealthDisplay.style.width = `${nateHealth.totalHP/40}%`;
                 console.log("Bullet hit Nate");
                 console.log(nateHealth.totalHP);
             }
@@ -706,7 +713,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     board.addEventListener("touchend", function() {
         isMouseDown = false;
-        learInterval(shootInterval);
     });
     
     leftButton.addEventListener("touchstart", function() {
